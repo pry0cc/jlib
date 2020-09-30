@@ -4,7 +4,7 @@ source "$HOME/.jlib/lib/jlib.sh"
 
 new_path="$PATH"
 new_path="$new_path:$JLIB_PATH/bin"
-for dir in $(ls "$JLIB_PATH/packages")
+for dir in $(bash -c 'ls "$JLIB_PATH/packages"')
 do
     new_path="$new_path:$JLIB_PATH/packages/$dir"
 done

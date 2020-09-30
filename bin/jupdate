@@ -4,7 +4,7 @@ source "$HOME/.jlib/lib/jlib.sh"
 
 cd $JLIB_PATH && git pull && cd ..
 
-for dir in $(ls "$JLIB_PATH/packages")
+for dir in $(bash -c 'ls "$JLIB_PATH/packages"')
 do
     cd "$JLIB_PATH/packages/$dir" && git pull && cd ..
 done
