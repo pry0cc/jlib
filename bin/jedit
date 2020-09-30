@@ -1,0 +1,17 @@
+#!/bin/bash
+
+source "$HOME/.jlib/lib/jlib.sh"
+
+if [ -f "$JLIB_PATH/config.json" ]; then
+    echo "Editing config... Press enter to edit. CTRL+X then 'Y' to save."
+    read
+    nano "$JLIB_PATH/config.json"
+else
+    echo "You don't have a config setup yet for jlib"
+    echo "Setting you up..."
+    cp "$JLIB_PATH/config.json.example" "$JLIB_PATH/config.json"
+    echo "Please press enter to edit configuration - please add whatever you need."
+    read
+    nano "$JLIB_PATH/config.json"
+fi
+
