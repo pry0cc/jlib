@@ -1,0 +1,11 @@
+#!/bin/bash
+
+source "$HOME/.jlib/lib/jlib.sh"
+
+new_path="$PATH"
+for dir in $(ls "$JLIB_PATH/packages")
+do
+    new_path="$new_path:$JLIB_PATH/packages/$dir"
+done
+
+export PATH="$new_path"
