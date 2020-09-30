@@ -4,8 +4,10 @@ source "$HOME/.jlib/lib/jlib.sh"
 
 new_path="$PATH"
 new_path="$new_path:$JLIB_PATH/bin"
-for dir in $(bash -c 'ls "$JLIB_PATH/packages"')
+
+for dir in $(find "$JLIB_PATH/packages/" -maxdepth 1 -type d -printf '%f\n' | grep -v "packages/")
 do
+    echo $dir
     new_path="$new_path:$JLIB_PATH/packages/$dir"
 done
 
