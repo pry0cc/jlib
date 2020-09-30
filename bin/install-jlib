@@ -1,0 +1,12 @@
+#!/bin/bash
+
+install_path="$HOME/.jlib"
+
+if [ -d "$install_path" ]; then
+    echo "Jlib is already installed"
+    echo "Run 'rm -rf $HOME/.jlib/' to uninstall..."
+    exit
+fi
+
+git clone https://github.com/pry0cc/jlib $install_path
+echo "Jlib is now installed, please add source \"$HOME/.jlib/bin/genpath\""
