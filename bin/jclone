@@ -1,0 +1,8 @@
+#!/bin/bash
+
+repo="$1"
+source "$HOME/.jlib/lib/jlib.sh"
+mkdir -p "$JLIB_PATH/packages"
+name="$(echo "$repo" | cut -d "/" -f 5)"
+
+git submodule add "$repo" "$JLIB_PATH/packages/$name"
