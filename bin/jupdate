@@ -7,7 +7,7 @@ echo -e -n "${Blue}"
 cd $JLIB_PATH && git pull && cd ..
 echo -e -n "${Color_Off}"
 
-for dir in $(find "$JLIB_PATH/packages" -depth 1 -type d | sed 's/^\.\///g' | cut -d  "/" -f 6)
+for dir in $(find "$JLIB_PATH/packages" -type d | sed 's/^\.\///g' | cut -d  "/" -f 6)
 do
     echo -e "${BWhite}Updating package '${Green}$dir${BWhite}'...${Color_Off}"
     echo -e -n "${Blue}"
